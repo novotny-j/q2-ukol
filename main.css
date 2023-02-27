@@ -1,0 +1,523 @@
+/*# variables #*/
+/*# fonts #*/
+/*# animations #*/
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  30% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes easeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#more-trips, #socials, #gallery-control, #gallery, .square, #description, .header-container, #short-desc, .title-img {
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+}
+
+/*# common #*/
+html {
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.5vw;
+  font-weight: 100;
+  color: #000;
+  background-image: url("../q2-ukol/images/Repeat Grid 11.svg");
+  background-repeat: no-repeat;
+}
+@media (max-width: 1023px) {
+  body {
+    background-position-x: 95vw;
+    background-position-y: 1262px;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    background-position-x: right;
+    background-position-y: 231px;
+  }
+}
+
+.btn {
+  border: none;
+  transition-duration: 1s;
+  transition-property: background-color;
+}
+
+.btn:hover {
+  background-color: #000;
+  font-weight: 500;
+}
+
+.btn:active {
+  font-weight: initial;
+}
+
+.round {
+  color: #0D9206;
+  background-color: #fff;
+  padding: 0 26px;
+  border-radius: 60px;
+  box-shadow: 5px 0px 7px rgba(0, 0, 0, 0.1607843137);
+  opacity: 0.79;
+}
+@media (max-width: 1023px) {
+  .round {
+    font: normal normal normal 38px/42px "Source Sans Pro", sans-serif;
+  }
+}
+@media (min-width: 1024px) {
+  .round {
+    font: normal normal normal 26px/33px "Source Sans Pro", sans-serif;
+  }
+}
+@media (max-width: 1023px) {
+  .round {
+    min-width: 90px;
+    min-height: 90px;
+  }
+}
+@media (min-width: 1024px) {
+  .round {
+    min-width: 60px;
+    min-height: 60px;
+  }
+}
+
+.round:hover {
+  color: #fff;
+  background-color: #789376;
+  font-weight: initial;
+}
+
+/*# first/left #*/
+.title-img {
+  animation-name: slideInLeft;
+}
+
+@media (min-width: 1800px) {
+  .title-img {
+    margin-top: -5.4vw;
+  }
+}
+@media (min-width: 1024px) {
+  .title-img {
+    width: 50vw;
+  }
+}
+#short-desc {
+  animation-name: slideInBottom;
+  position: absolute;
+  padding: 8px 2.8vw 17px 21px;
+  box-shadow: -8px 14px 27px rgba(0, 0, 0, 0.1607843137);
+  border-radius: 12px;
+  background-color: #fff;
+  opacity: 1;
+}
+@media (max-width: 1023px) {
+  #short-desc {
+    top: 150px;
+    left: 65vw;
+  }
+}
+@media (min-width: 1024px) {
+  #short-desc {
+    top: 68px;
+    left: 33vw;
+  }
+}
+
+.days {
+  color: #0D9206;
+}
+@media (max-width: 1023px) {
+  .days {
+    font: normal normal 900 5vw/8vw "Source Sans Pro", sans-serif;
+  }
+}
+@media (min-width: 1024px) {
+  .days {
+    font: normal normal 900 2vw/2.8vw "Source Sans Pro", sans-serif;
+  }
+}
+
+.price {
+  color: #000;
+}
+@media (max-width: 1023px) {
+  .price {
+    font: normal normal normal 4vw/5vw "Source Sans Pro", sans-serif;
+  }
+}
+@media (min-width: 1024px) {
+  .price {
+    font: normal normal normal 1.7vw/2vw "Source Sans Pro", sans-serif;
+  }
+}
+
+.price::before {
+  content: "";
+  display: block;
+  border-top: solid;
+  border-color: #FF8800;
+  width: 80%;
+}
+
+/*# second/right #*/
+.header-container {
+  animation-name: slideInRight;
+  display: flex;
+  position: relative;
+}
+@media (max-width: 1023px) {
+  .header-container {
+    margin-left: 100px;
+  }
+}
+@media (min-width: 1024px) {
+  .header-container {
+    top: 37px;
+  }
+}
+
+.header-1 {
+  flex: 1;
+  max-width: 200px;
+  text-shadow: 0px 16px 21px rgba(0, 0, 0, 0.1607843137);
+}
+@media (max-width: 1023px) {
+  .header-1 {
+    font: normal normal 900 90px/105px "Source Sans Pro", sans-serif;
+  }
+}
+@media (min-width: 1024px) {
+  .header-1 {
+    font: normal normal 900 4.7vw/5.5vw "Source Sans Pro", sans-serif;
+  }
+}
+
+.header-2 {
+  position: absolute;
+  bottom: 0;
+  text-shadow: 0px 16px 21px rgba(0, 0, 0, 0.1607843137);
+  color: #0D9206;
+}
+@media (max-width: 1023px) {
+  .header-2 {
+    font: normal normal bold 84px/112px "Square721 BT", sans-serif;
+  }
+}
+@media (min-width: 1024px) {
+  .header-2 {
+    font: normal normal bold 4.4vw/5.8vw "Square721 BT", sans-serif;
+  }
+}
+@media (max-width: 1023px) {
+  .header-2 {
+    left: 38%;
+  }
+}
+@media (min-width: 1024px) {
+  .header-2 {
+    left: 33%;
+  }
+}
+
+#description {
+  animation-name: slideInRight;
+  border-left: solid;
+  border-color: #0D9206;
+  border-width: thick;
+  padding: 0 36.5px;
+}
+@media (max-width: 1023px) {
+  #description {
+    margin-left: 140px;
+  }
+}
+@media (min-width: 1024px) {
+  #description {
+    margin-top: 63px;
+  }
+}
+
+p {
+  color: #7D7D7D;
+  max-width: 85%;
+}
+@media (max-width: 1023px) {
+  p {
+    font: normal normal normal 28px/36px "Source Sans Pro", sans-serif;
+  }
+}
+@media (min-width: 1024px) {
+  p {
+    font: normal normal normal 28px/36px "Source Sans Pro", sans-serif;
+  }
+}
+
+.square {
+  animation-name: easeIn;
+  animation-duration: 4s;
+}
+
+@media (max-width: 1023px) {
+  .square {
+    color: #fff;
+    background-color: #FF8800;
+    font: normal normal normal 48px/52px "Source Sans Pro", sans-serif;
+    width: 400px;
+    height: 100px;
+  }
+}
+@media (min-width: 1024px) {
+  .square {
+    color: #fff;
+    background-color: #FF8800;
+    font: normal normal normal 27px/34px "Source Sans Pro", sans-serif;
+    width: 203px;
+    height: 61px;
+  }
+}
+#gallery {
+  animation-name: slideInTop;
+  margin-top: 100px;
+  display: flex;
+  overflow: hidden;
+}
+@media (max-width: 1023px) {
+  #gallery {
+    max-width: 102.6vw;
+    margin-left: 3vw;
+  }
+}
+@media (min-width: 1024px) {
+  #gallery {
+    max-width: 50vw;
+  }
+}
+
+#gallery-control {
+  animation-name: easeIn;
+  animation-duration: 4s;
+}
+
+@media (max-width: 1023px) {
+  #gallery-control {
+    position: absolute;
+    right: -23px;
+    margin-top: -122px;
+  }
+  .arrow {
+    max-width: 90px;
+    margin-left: 10px;
+    font-size: 40px;
+    vertical-align: bottom;
+  }
+}
+@media (min-width: 1024px) {
+  #gallery-control {
+    position: absolute;
+    right: 50px;
+    margin-top: -100px;
+  }
+  .arrow {
+    max-width: 60px;
+    padding-left: 10px;
+    margin-left: 5px;
+    font-size: 40px;
+    vertical-align: bottom;
+  }
+}
+/*# socials #*/
+#socials {
+  animation-name: slideInRight;
+  position: absolute;
+  left: 35px;
+  width: 60px;
+}
+@media (max-width: 1023px) {
+  #socials {
+    top: 337px;
+  }
+}
+@media (min-width: 1024px) {
+  #socials {
+    top: 247px;
+  }
+}
+
+@media (max-width: 1023px) {
+  #facebook {
+    border: 1px solid #0D9206;
+    opacity: 0.79;
+    background-image: url("../q2-ukol/images/Icon awesome-facebook-f.svg");
+    background-repeat: no-repeat;
+    background-blend-mode: difference;
+    box-shadow: none;
+    margin-bottom: 15px;
+    opacity: 1;
+    background-size: 30px;
+    background-position: 27px center;
+  }
+  #twitter {
+    border: 1px solid #0D9206;
+    opacity: 0.79;
+    background-image: url("../q2-ukol/images/Icon metro-twitter.svg");
+    background-repeat: no-repeat;
+    background-blend-mode: difference;
+    box-shadow: none;
+    margin-bottom: 15px;
+    opacity: 1;
+    background-size: 48px;
+    background-position: 19px center;
+  }
+  #url {
+    border: 1px solid #0D9206;
+    opacity: 0.79;
+    background-image: url("../q2-ukol/images/Icon feather-share-2.svg");
+    background-repeat: no-repeat;
+    background-blend-mode: difference;
+    box-shadow: none;
+    margin-bottom: 15px;
+    opacity: 1;
+    background-size: 42px;
+    background-position: 18px center;
+  }
+}
+@media (min-width: 1024px) {
+  #facebook {
+    border: 1px solid #0D9206;
+    opacity: 0.79;
+    background-image: url("../q2-ukol/images/Icon awesome-facebook-f.svg");
+    background-repeat: no-repeat;
+    background-blend-mode: difference;
+    box-shadow: none;
+    margin-bottom: 15px;
+    opacity: 1;
+    background-size: 17px;
+    background-position: 21px center;
+  }
+  #twitter {
+    border: 1px solid #0D9206;
+    opacity: 0.79;
+    background-image: url("../q2-ukol/images/Icon metro-twitter.svg");
+    background-repeat: no-repeat;
+    background-blend-mode: difference;
+    box-shadow: none;
+    margin-bottom: 15px;
+    opacity: 1;
+    background-size: 31px;
+    background-position: 15px center;
+  }
+  #url {
+    border: 1px solid #0D9206;
+    opacity: 0.79;
+    background-image: url("../q2-ukol/images/Icon feather-share-2.svg");
+    background-repeat: no-repeat;
+    background-blend-mode: difference;
+    box-shadow: none;
+    margin-bottom: 15px;
+    opacity: 1;
+    background-size: 27px;
+    background-position: 12px center;
+  }
+}
+#facebook:hover, #twitter:hover, #url:hover {
+  box-shadow: 5px 14px 15px rgba(0, 0, 0, 0.1803921569);
+  background-blend-mode: unset;
+}
+@media (max-width: 1023px) {
+  #facebook:hover, #twitter:hover, #url:hover {
+    padding: 0 20px 2px 90px;
+  }
+}
+@media (min-width: 1024px) {
+  #facebook:hover, #twitter:hover, #url:hover {
+    padding: 0 20px 2px 60px;
+  }
+}
+
+#twitter::before {
+  background-image: url("../q2-ukol/images/Icon metro-twitter.svg");
+  filter: invert(1);
+}
+
+/*# more-trips #*/
+#more-trips {
+  animation-name: easeIn;
+  animation-duration: 4s;
+}
+
+@media (min-width: 1024px) {
+  #more-trips {
+    position: absolute;
+    top: 813px;
+  }
+  .more-trips-text {
+    position: relative;
+    top: -55px;
+    font: normal normal normal 26px/33px "Source Sans Pro", sans-serif;
+    color: #789376;
+  }
+}
+@media (max-width: 1023px) {
+  #more-trips img {
+    width: 180px;
+  }
+  .more-trips-text {
+    position: relative;
+    top: -80px;
+    font: normal normal normal 26px/33px "Source Sans Pro", sans-serif;
+    color: #789376;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

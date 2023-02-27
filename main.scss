@@ -1,0 +1,538 @@
+/*# variables #*/
+
+$desktop-width: 1024px;
+
+$fontStack: 'Source Sans Pro', sans-serif;
+$fontStack-2: 'Square721 BT', sans-serif;
+
+$primaryColor: #0D9206;
+$secondaryColor: #FF8800;
+$tertiaryColor: #789376;
+$shadowColor: #00000029;
+$textColor: #7D7D7D;
+
+/*# fonts #*/
+
+@mixin header-1-font {
+    @media (max-width: #{$desktop-width - 1px}) {
+        font: normal normal 900 90px/105px $fontStack;
+    }
+    @media (min-width: $desktop-width) {
+        font: normal normal 900 4.7vw/5.5vw $fontStack;
+    }
+}
+@mixin header-2-font {
+    @media (max-width: #{$desktop-width - 1px}) {
+        font: normal normal bold 84px/112px $fontStack-2;
+    }
+    @media (min-width: $desktop-width) {
+        font: normal normal bold 4.4vw/5.8vw $fontStack-2;
+    }
+}
+@mixin p-font {
+    @media (max-width: #{$desktop-width - 1px}) {
+        font: normal normal normal 28px/36px $fontStack;
+    }
+    @media (min-width: $desktop-width) {
+        font: normal normal normal 28px/36px $fontStack;
+    }
+}
+@mixin days-font {
+    @media (max-width: #{$desktop-width - 1px}) {
+        font: normal normal 900 5vw/8vw $fontStack;
+    }
+    @media (min-width: $desktop-width) {
+        font: normal normal 900 2vw/2.8vw $fontStack;
+    }
+}
+@mixin price-font {
+    @media (max-width: #{$desktop-width - 1px}) {
+        font: normal normal normal 4vw/5vw $fontStack;
+    }
+    @media (min-width: $desktop-width) {
+        font: normal normal normal 1.7vw/2vw $fontStack;
+    }
+}
+@mixin round-font {
+    @media (max-width: #{$desktop-width - 1px}) {
+        font: normal normal normal 38px/42px $fontStack;
+    }
+    @media (min-width: $desktop-width) {
+        font: normal normal normal 26px/33px $fontStack;
+    }
+}
+
+/*# animations #*/
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    30% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes easeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+%animation {
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+}
+
+/*# common #*/
+
+html {
+    display: flex;
+}
+
+@media (min-width: $desktop-width) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+
+@mixin grid-position {
+    @media (max-width: #{$desktop-width - 1px}) {
+        background-position-x: 95vw;
+        background-position-y: 1262px;
+    }
+
+    @media (min-width: $desktop-width) {
+        background-position-x: right;
+        background-position-y: 231px;
+    }
+}
+
+body {
+    font-family: $fontStack;
+    font-size: 1.5vw;
+    font-weight: 100;
+    color: #000;
+    background-image: url('../q2-ukol/images/Repeat Grid 11.svg');
+    background-repeat: no-repeat;
+    @include grid-position;
+}
+
+.btn {
+    border: none;
+    transition-duration: 1s;
+    transition-property: background-color;
+}
+
+.btn:hover {
+    background-color: #000;
+    font-weight: 500;
+}
+
+.btn:active {
+    font-weight: initial;
+}
+
+@mixin round-phone {
+    @media (max-width: #{$desktop-width - 1px}) {
+        min-width: 90px;
+        min-height: 90px;
+    }
+    @media (min-width: $desktop-width) {
+        min-width: 60px;
+        min-height: 60px;
+    }
+}
+
+.round {
+    color: $primaryColor;
+    background-color: #fff;
+    padding: 0 26px;
+    border-radius: 60px;
+    box-shadow: 5px 0px 7px $shadowColor;
+    opacity: 0.79;
+    @include round-font;
+    @include round-phone;
+}
+
+.round:hover {
+    color: #fff;
+    background-color: $tertiaryColor;
+    font-weight: initial;
+}
+
+/*# first/left #*/
+
+.title-img {
+    @extend %animation;
+    animation-name: slideInLeft;
+}
+
+@media (min-width: 1800px) {
+    .title-img {
+        margin-top: -5.4vw;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .title-img {
+        width: 50vw;
+    }
+}
+
+@mixin short-desc {
+    @media (max-width: #{$desktop-width - 1px}) {
+        top: 150px;
+        left: 65vw;
+    }
+
+    @media (min-width: $desktop-width) {
+        top: 68px;
+        left: 33vw;
+    }
+}
+
+#short-desc {
+    @extend %animation;
+    animation-name: slideInBottom;
+    @include short-desc;
+    position: absolute;
+    padding: 8px 2.8vw 17px 21px;
+    box-shadow: -8px 14px 27px $shadowColor;
+    border-radius: 12px;
+    background-color: #fff;
+    opacity: 1;
+}
+
+.days {
+    color: $primaryColor;
+    @include days-font;
+}
+
+.price {
+    color: #000;
+    @include price-font;
+}
+
+.price::before {
+    content: "";
+    display: block;
+    border-top: solid;
+    border-color: $secondaryColor;
+    width: 80%;
+}
+
+/*# second/right #*/
+
+@mixin second-phone {
+    @media (max-width: #{$desktop-width - 1px}) {
+        margin-left: 100px;
+    }
+    @media (min-width: $desktop-width) {
+        top: 37px;
+    }
+}
+
+.header-container {
+    @extend %animation;
+    animation-name: slideInRight;
+    display: flex;
+    position: relative;
+    @include second-phone;
+}
+
+.header-1 {
+    flex: 1;
+    max-width: 200px;
+    text-shadow: 0px 16px 21px $shadowColor;
+    @include header-1-font;
+}
+
+@mixin header-2-position {
+    @media (max-width: #{$desktop-width - 1px}) {
+        left: 38%;
+    }
+    @media (min-width: $desktop-width) {
+        left: 33%;
+    }
+}
+
+.header-2 {
+    position: absolute;
+    bottom: 0;
+    text-shadow: 0px 16px 21px $shadowColor;
+    color: $primaryColor;
+    @include header-2-font;
+    @include header-2-position;
+}
+
+@mixin description-phone {
+    @media (max-width: #{$desktop-width - 1px}) {
+        margin-left: 140px;
+    }
+    @media (min-width: $desktop-width) {
+        margin-top: 63px;
+    }
+}
+
+#description {
+    @extend %animation;
+    animation-name: slideInRight;
+    border-left: solid;
+    border-color: $primaryColor;
+    border-width: thick;
+    padding: 0 36.5px;
+    @include description-phone;
+}
+
+p {
+    color: $textColor;
+    max-width: 85%;
+    @include p-font;
+}
+
+.square {
+    @extend %animation;
+    animation-name: easeIn;
+    animation-duration: 4s;
+}
+
+@media (max-width: #{$desktop-width - 1px}) {
+    .square {
+        color: #fff;
+        background-color: $secondaryColor;
+        font: normal normal normal 48px/52px $fontStack;
+        width: 400px;
+        height: 100px;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .square {
+        color: #fff;
+        background-color: $secondaryColor;
+        font: normal normal normal 27px/34px $fontStack;
+        width: 203px;
+        height: 61px;
+    }
+}
+
+@mixin gallery-width {
+    @media (max-width: #{$desktop-width - 1px}) {
+        max-width: 102.6vw;
+        margin-left: 3vw;
+    }
+    @media (min-width: $desktop-width) {
+        max-width: 50vw;
+    }
+}
+
+#gallery {
+    @extend %animation;
+    animation-name: slideInTop;
+    margin-top: 100px;
+    display: flex;
+    overflow: hidden;
+    @include gallery-width;
+}
+
+#gallery-control {
+    @extend %animation;
+    animation-name: easeIn;
+    animation-duration: 4s;
+}
+
+@media (max-width: #{$desktop-width - 1px}) {
+    #gallery-control {
+        position: absolute;
+        right: -23px;
+        margin-top: -122px;
+    }
+
+    .arrow {
+        max-width: 90px;
+        margin-left: 10px;
+        font-size: 40px;
+        vertical-align: bottom;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    #gallery-control {
+        position: absolute;
+        right: 50px;
+        margin-top: -100px;
+    }
+
+    .arrow {
+        max-width: 60px;
+        padding-left: 10px;
+        margin-left: 5px;
+        font-size: 40px;
+        vertical-align: bottom;
+    }
+}
+
+/*# socials #*/
+
+@mixin socials {
+    @media (max-width: #{$desktop-width - 1px}) {
+        top: 337px;
+    }
+    @media (min-width: $desktop-width) {
+        top: 247px;
+    }
+}
+
+#socials {
+    @extend %animation;
+    animation-name: slideInRight;
+    position: absolute;
+    left: 35px;
+    width: 60px;
+    @include socials;
+}
+
+@mixin social ($icon: url('../q2-ukol/images/Icon feather-share-2.svg')) {
+    border: 1px solid #0D9206;
+    opacity: 0.79;
+    background-image: $icon;
+    background-repeat: no-repeat;
+    background-blend-mode: difference;
+    box-shadow: none;
+    margin-bottom: 15px;
+    opacity: 1;
+}
+
+@media (max-width: #{$desktop-width - 1px}) {
+    #facebook {
+        @include social($icon: url('../q2-ukol/images/Icon awesome-facebook-f.svg'));
+        background-size: 30px;
+        background-position: 27px center;
+    }
+
+    #twitter {
+        @include social($icon: url('../q2-ukol/images/Icon metro-twitter.svg'));
+        background-size: 48px;
+        background-position: 19px center;
+    }
+
+    #url {
+        @include social();
+        background-size: 42px;
+        background-position: 18px center;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    #facebook {
+        @include social($icon: url('../q2-ukol/images/Icon awesome-facebook-f.svg'));
+        background-size: 17px;
+        background-position: 21px center;
+    }
+
+    #twitter {
+        @include social($icon: url('../q2-ukol/images/Icon metro-twitter.svg'));
+        background-size: 31px;
+        background-position: 15px center;
+    }
+
+    #url {
+        @include social();
+        background-size: 27px;
+        background-position: 12px center;
+    }
+}
+
+%social-hover {
+    @media (max-width: #{$desktop-width - 1px}) {
+        padding: 0 20px 2px 90px;
+    }
+    @media (min-width: $desktop-width) {
+        padding: 0 20px 2px 60px;
+    }
+    box-shadow: 5px 14px 15px #0000002E;
+    background-blend-mode: unset;
+}
+
+#facebook:hover, #twitter:hover, #url:hover {
+    @extend %social-hover;
+}
+
+#twitter::before {
+    background-image: url('../q2-ukol/images/Icon metro-twitter.svg');
+    filter: invert(1);
+}
+
+/*# more-trips #*/
+
+#more-trips {
+    @extend %animation;
+    animation-name: easeIn;
+    animation-duration: 4s;
+}
+
+@media (min-width: $desktop-width) {
+    #more-trips {
+        position: absolute;
+        top: 813px;
+    }
+
+    .more-trips-text {
+        position: relative;
+        top: -55px;
+        font: normal normal normal 26px/33px $fontStack;
+        color: $tertiaryColor;
+    }
+}
+
+@media (max-width: #{$desktop-width - 1px}) {
+    #more-trips img {
+        width: 180px;
+    }
+
+    .more-trips-text {
+        position: relative;
+        top: -80px;
+        font: normal normal normal 26px/33px $fontStack;
+        color: $tertiaryColor;
+    }
+}

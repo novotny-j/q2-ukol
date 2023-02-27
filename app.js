@@ -1,3 +1,5 @@
+// hover effect
+
 const socials = [document.getElementById("facebook"), document.getElementById("twitter"), document.getElementById("url")];
 
 socials.forEach(element => {
@@ -9,6 +11,8 @@ socials.forEach(element => {
         element.value = "";
     });
 });
+
+// slick gallery
 
 const gallery = document.getElementById("gallery");
 let img = document.querySelector(".img");
@@ -30,13 +34,10 @@ next = () => {
         if (i <= 2) {
             i = width;
             cloneImg();
-            cloneImg();
+            cloneImg();     //twice to avoid end of the stack
             return;
         }
         i -= 2;
         next ();
     }, 1);
 }
-
-
-//383 2000
